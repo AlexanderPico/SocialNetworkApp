@@ -190,6 +190,16 @@ public class Publication extends AbstractEdge {
 		return this.title;
 	}
 
+
+        /**
+         * Get publication info
+         * @param null
+         * @return String info
+         */
+        public String getInfo() {
+                return this.title+"("+this.pubDate+")"+this.journal;
+        }
+
 	
 	/**
 	 * Set publication authors

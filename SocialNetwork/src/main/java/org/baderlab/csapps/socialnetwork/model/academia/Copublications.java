@@ -75,7 +75,7 @@ public class Copublications extends AbstractEdge {
 	public void addPublication(Publication publication) {
 		this.getPubList().add(publication);
 		this.getEdgeAttrMap().put(BasicSocialNetworkVisualstyle.edgeattr_numcopubs, this.getPubList().size());
-		((ArrayList<String>) this.getEdgeAttrMap().get(BasicSocialNetworkVisualstyle.nodeattr_pub)).add(publication.getTitle());
+		((ArrayList<String>) this.getEdgeAttrMap().get(BasicSocialNetworkVisualstyle.nodeattr_pub)).add(publication.getInfo());
 	}
 
 	/**
@@ -105,7 +105,7 @@ public class Copublications extends AbstractEdge {
 		this.setEdgeAttrMap(new HashMap<String, Object>());
 		this.getEdgeAttrMap().put(BasicSocialNetworkVisualstyle.edgeattr_numcopubs, this.getPubList().size());
 		ArrayList<String> titles = new ArrayList<String>();
-		titles.add(this.getPubList().get(0).getTitle());
+		titles.add(this.getPubList().get(0).getInfo());
 		this.getEdgeAttrMap().put(BasicSocialNetworkVisualstyle.nodeattr_pub, titles);
 	}
 

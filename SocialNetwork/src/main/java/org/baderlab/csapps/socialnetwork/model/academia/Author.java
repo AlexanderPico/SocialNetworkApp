@@ -566,7 +566,7 @@ public class Author extends AbstractNode {
 		if (publication.isSingleAuthored()) {
 			if (! this.hasAlreadyBeenAdded()) {
 				this.setTimesCited(timesCited + publication.getTimesCited());
-				pubList.add(publication.getTitle());
+				pubList.add(publication.getInfo());
 				this.setPubList(pubList);
 				this.setAlreadyBeenAdded(true);
 			} else {
@@ -574,7 +574,7 @@ public class Author extends AbstractNode {
 			}
 		} else {
 			this.setTimesCited(timesCited + publication.getTimesCited());
-			pubList.add(publication.getTitle());
+			pubList.add(publication.getInfo());
 			this.setPubList(pubList);
 		}
 	}
