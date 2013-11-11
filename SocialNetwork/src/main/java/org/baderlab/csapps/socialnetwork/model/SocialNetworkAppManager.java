@@ -299,8 +299,7 @@ public class SocialNetworkAppManager {
 				category = Category.PUBMED;
 				interaction = new Interaction(results, category);
 				socialNetwork = new SocialNetwork(searchTerm, category);
-				//TODO:figure out how to add publications from pubmed search
-				//socialNetwork.setPublications(search.getTotalHits());
+				socialNetwork.setPublications(new ArrayList(results));
 				
 				// Create new map using results
 				map = interaction.getAbstractMap();
