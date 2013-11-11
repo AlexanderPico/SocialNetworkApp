@@ -251,7 +251,7 @@ public class Pubmed {
 	                                                IOException, 
 	                                                ParserConfigurationException {
 		DefaultHandler searchHandler = new DefaultHandler() {
-			
+			int i = 0;	
 			/**
 			 * XML Parsing variables. Used to temporarily store data. 
 			 */
@@ -262,8 +262,9 @@ public class Pubmed {
 									 String localName, 
 									 String qName, 
 					                 Attributes attributes) throws SAXException {
-				if (qName.equalsIgnoreCase("Count")) {
+				if (i == 0 && qName.equalsIgnoreCase("Count")) {
 					isTotalPubs = true;
+					i += 1;
 				}
 				if (qName.equalsIgnoreCase("QueryKey")) {
 					isQueryKey = true;

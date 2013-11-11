@@ -50,7 +50,7 @@ public class Query {
 		if (year.trim().isEmpty()) {
 			return query;
 		}
-		return query + "+AND+" + year + "[pdat]";
+		return query + "+AND+" + year + "[DP]";
 	}
 	
 	/**
@@ -66,6 +66,7 @@ public class Query {
 	public Query(String rawQuery) {
 		rawQuery = rawQuery.replace(",", "");
 		rawQuery = rawQuery.replace("\\s", "+");
+		rawQuery = Query.augmentYear(rawQuery, "2013"); //limit query to specific year
 		this.query = Query.augmentHistory(rawQuery);
 	}
 	
